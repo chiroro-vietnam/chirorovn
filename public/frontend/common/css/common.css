@@ -1,0 +1,417 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------------------------------------------
+
+   common
+         - header
+            - nav
+            - textNavi
+            - bnr
+            - footer
+            - pagetop
+            - second
+
+--------------------------------------------------------------------------------------------------*/
+
+
+/*reset-------------------------------------------------*/
+body,div,h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ul,header,section,article,aside,footer,nav,li  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+table {
+ border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  border: none;
+  vertical-align: top;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+header,section,article,aside,footer,nav {
+ display: block;
+}
+
+ul
+{
+  list-style: none;
+}
+/*-------------------------------------------------reset*/
+
+
+/*common-------------------------------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  color: #454545;
+  font-size: 14px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  line-height: 1.4;
+  min-width: 1600px;
+}
+
+a{
+  text-decoration:none;
+  cursor:pointer;
+  color: #454545;
+}
+a:link {
+  /*color: #F10000;*/
+}
+
+a:visited {
+  /*color: #F10000;*/
+}
+
+a:hover, a:active {
+  /*color: #F10000;*/
+}
+
+.clear:after {
+ content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clear {
+ display: inline-table;
+ overflow: hidden;
+}
+
+/* mac \*/
+* html .clear {
+ height: 1%;
+}
+.clear {
+ display: block;
+}
+/* macend */
+
+.alignleft {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 10px 10px;
+}
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+/*-------------------------------------------------common*/
+
+
+/*------------------------------------------------------------------------------------------------
+  header
+--------------------------------------------------------------------------------------------------*/
+#headerArea {
+  border-top:6px #F42929 solid;
+  width:100%;
+}
+header {
+  position: relative;
+  width: 1142px;
+  height: 117px;
+  margin: 0 auto;
+  border-bottom:1px solid #EAEAEA;
+}
+
+header h1 {
+  position: absolute;
+  top: 33px;
+  text-indent: -9999px;
+}
+
+header h1 a img {
+  display: block;
+  width: 499px;
+  height: 60px;
+  overflow: hidden;
+}
+
+header .text_header {
+  position: absolute;
+  top: 70px;
+  right: 0;
+}
+header .menusp {
+  position: absolute;
+  right: 0;
+}
+
+/*------------------------------------------------------------------------------------------------
+  nav (japanese)
+--------------------------------------------------------------------------------------------------*/
+nav {
+  height: 67px;
+  margin-top:33px;
+}
+
+nav ul {
+  width: 1142px;
+  margin: 0 auto;
+  padding-left: 96px;
+  list-style: none;
+}
+
+nav ul li {
+  float: left;
+  margin: 0;
+  padding: 0;
+  text-indent: -9999px;
+}
+
+nav ul li a {
+  display: block;
+  height: 41px;
+  overflow: hidden;
+}
+
+nav ul li#navline a
+{
+  width: 48px;
+  background: url(../image/gnavi.png) no-repeat -158px 0;
+}
+nav ul li#nav01 a:link, nav ul li#nav01 a:visited {
+  width: 158px;
+  background: url(../image/gnavi.png) no-repeat 0 0;
+}
+
+nav ul li#nav01 a:hover, nav ul li#nav01 a:active,  nav ul li#nav01 a.now {
+  background: url(../image/gnavi-hover.png) no-repeat 0 0;
+}
+
+nav ul li#nav02 a:link, nav ul li#nav02 a:visited {
+  width: 70px;
+  background: url(../image/gnavi.png) no-repeat -206px 0;
+}
+
+nav ul li#nav02 a:hover, nav ul li#nav02 a:active,  nav ul li#nav02 a.now {
+  background: url(../image/gnavi-hover.png) no-repeat -206px 0;
+}
+
+nav ul li#nav03 a:link, nav ul li#nav03 a:visited {
+  width: 72px;
+  background: url(../image/gnavi.png) no-repeat -322px 0;
+}
+
+nav ul li#nav03 a:hover, nav ul li#nav03 a:active,  nav ul li#nav03 a.now {
+  background: url(../image/gnavi-hover.png) no-repeat -322px 0;
+}
+
+nav ul li#nav04 a:link, nav ul li#nav04 a:visited {
+  width: 72px;
+  background: url(../image/gnavi.png) no-repeat -441px 0;
+}
+
+nav ul li#nav04 a:hover, nav ul li#nav04 a:active,  nav ul li#nav04 a.now {
+  background: url(../image/gnavi-hover.png) no-repeat -441px 0;
+}
+nav ul li#nav05 a:link, nav ul li#nav05 a:visited {
+  width: 51px;
+  background: url(../image/gnavi.png) no-repeat -560px 0;
+}
+
+nav ul li#nav05 a:hover, nav ul li#nav05 a:active,  nav ul li#nav05 a.now {
+  background: url(../image/gnavi-hover.png) no-repeat -560px 0;
+}
+
+nav ul li#nav06 a:link, nav ul li#nav06 a:visited {
+  width: 72px;
+  background: url(../image/gnavi.png) no-repeat -668px 0;
+}
+
+nav ul li#nav06 a:hover, nav ul li#nav06 a:active,  nav ul li#nav06 a.now {
+  background: url(../image/gnavi-hover.png) no-repeat -668px 0;
+}
+nav ul li#nav07 a:link, nav ul li#nav07 a:visited {
+  width: 106px;
+  background: url(../image/gnavi.png) no-repeat -787px 0;
+}
+
+nav ul li#nav07 a:hover, nav ul li#nav07 a:active,  nav ul li#nav07 a.now {
+  background: url(../image/gnavi-hover.png) no-repeat -787px 0;
+}
+
+
+/*------------------------------------------------------------------------------------------------
+  bnr
+--------------------------------------------------------------------------------------------------*/
+.bnr {
+  margin: 0;
+  padding: 0;
+  list-style: none;  
+}
+
+.bnr li {
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+
+/*------------------------------------------------------------------------------------------------
+  textNavi
+--------------------------------------------------------------------------------------------------*/
+#textNavi {
+  background-color: #E8E8E8;
+}
+
+#textNavi div {
+  position: relative;
+  width: 950px;
+  height: 48px;
+  margin: 0 auto;
+  line-height: 48px;
+}
+
+#textNavi div p.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#textNavi div p.sub {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#textNavi div p.sub a {
+  margin: 0 0 0 16px;
+  padding: 0 0 0 8px;
+  background: url(../image/arrow-04.png) no-repeat 0 center;
+}
+
+#textNavi div a:link, #textNavi div a:visited {
+  color: #312B2B;
+  text-decoration: none;
+}
+
+#textNavi div a:hover, #textNavi div a:active {
+  text-decoration: underline;
+}
+
+/*------------------------------------------------------------------------------------------------
+  content
+--------------------------------------------------------------------------------------------------*/
+
+.title-top
+{
+  background:#ECEBEB;
+  height:40px;
+  line-height:40px;
+  color:#181818;
+}
+.title-top a{
+  color:#F46D3F;
+}
+.title-second{
+  background:url(../../image/bg-new-second.jpg)no-repeat;
+  height:150px;
+  color:#fff;
+  width:100%;
+  padding-top:60px;
+}
+.title-top a::after { 
+    content: ">";
+  color: #181818;
+  padding:0px 12px;
+}
+
+/*------------------------------------------------------------------------------------------------
+  footer
+--------------------------------------------------------------------------------------------------*/
+
+#footer {
+  width:100%;
+}
+#footer .footer-info{
+  padding:80px 0px;
+  color:#181818;
+}
+#footer .footer-info .text-info{
+  float:left;
+  width:525px;
+}
+#footer .footer-info .text-info p{
+  line-height:1.5;
+}
+#footer .footer-info .text-info p:first-child{
+  margin-bottom:40px;
+}
+
+#footer .footer-info .text-navi>li{
+  width:200px;
+  display:inline-block;
+  vertical-align:top;
+  height:202px;
+}
+#footer .footer-info .text-navi>li ul{
+  margin-top:10px;
+}
+#footer .footer-info .text-navi>li ul li{
+  display:block;
+  background:url("../image/arrow-footer.jpg") no-repeat scroll 0px 7px;
+    margin: 0 0 3px;
+    padding: 0 0 0 14px;
+  line-height:25px;
+}
+#footer .footer-menu
+{
+  background:#F66E40;
+  height:115px;
+  color:#fff;
+}
+#footer .footer-menu .coppy{
+  float:left;
+  margin-top:50px;
+}
+#footer .footer-menu .menu{
+  margin-left:420px;
+  margin-top:50px;
+  float:left;
+}
+#footer .footer-menu .menu li{
+  float:left;
+  margin-right:45px;
+  list-style-type:disc;
+}
+#footer .footer-menu .menu li a{
+  color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

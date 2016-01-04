@@ -1,0 +1,17 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="l-mainContainer">
+		<div class="pageTitle x-clearFix">
+			<h2>Dashboard</h2>
+
+
+		</div>
+		 
+        <!-- MAIN CONTAINER -->
+        
+        
+        <!-- END MAIN CONTAINER -->        
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin/element/layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
