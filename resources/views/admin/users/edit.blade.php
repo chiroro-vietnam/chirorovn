@@ -32,34 +32,38 @@
                                         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> {{trans('common.lbl_username')}}<span class="icnMust">{{trans('common.icnMust')}}</span></label>
                                         <div class="col-sm-9">
                                             <input type="text" id="username" name="username" placeholder="{{trans('common.lbl_username')}}" class="col-xs-10 col-sm-5" />
+                                            <p class="txtFormError">※Vui lòng nhập username.</p>
                                         </div>
                                     </div>
-
+                                    <div class="space-4"></div>
                                      <div class="form-group">
                                         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> {{trans('common.lbl_email')}}<span class="icnMust">{{trans('common.icnMust')}}</span></label>
                                         <div class="col-sm-9">
                                             <input type="text" id="email" name="email" placeholder="{{trans('common.lbl_email')}}" class="col-xs-10 col-sm-5" />
+                                            <p class="txtFormError">※Vui lòng nhập E-mail.</p>
                                         </div>
                                     </div>
 
                                     <div class="space-4"></div>
 
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> {{trans('common.lbl_password')}}<span class="icnMust">{{trans('common.icnMust')}}</span></label>
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> {{trans('common.lbl_password')}}</label>
 
                                         <div class="col-sm-9">
                                             <input type="password" id="password" name="password" placeholder="{{trans('common.lbl_password')}}" class="col-xs-10 col-sm-5" />
-                                            </div>
+                                            <p class="txtFormError">※Mật khẩu hiện tại không đúng.</p>    
+                                        </div>
                                     </div>
 
                                     <div class="space-4"></div>
 
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> {{trans('common.lbl_confirm_password')}}<span class="icnMustSp"></span></label>
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> {{trans('common.lbl_confirm_password')}}</label>
 
                                         <div class="col-sm-9">
                                             <input type="password" id="confirm_password" name="confirm_password" placeholder="{{trans('common.lbl_confirm_password')}}" class="col-xs-10 col-sm-5" />
-                                            </div>
+                                            <p class="txtFormError">※Confirm password không đúng.</p>    
+                                        </div>
                                     </div>
 
                                     <div class="space-4"></div>
@@ -68,6 +72,7 @@
                                         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> {{trans('common.lbl_first_name')}}<span class="icnMust">{{trans('common.icnMust')}}</span></label>
                                         <div class="col-sm-9">
                                             <input type="text" id="first_name" name="first_name" placeholder="{{trans('common.lbl_first_name')}}" class="col-xs-10 col-sm-5" />
+                                            <p class="txtFormError">※Vui lòng nhập họ.</p>
                                         </div>
                                     </div>
 
@@ -78,12 +83,13 @@
                                         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> {{trans('common.lbl_last_name')}}<span class="icnMust">{{trans('common.icnMust')}}</span></label>
                                         <div class="col-sm-9">
                                             <input type="text" id="last_name" name="last_name" placeholder="{{trans('common.lbl_last_name')}}" class="col-xs-10 col-sm-5" />
+                                            <p class="txtFormError">※Vui lòng nhập tên.</p>
                                         </div>
                                     </div>                                   
 
                                     <div class="space-4"></div>
                                     <div class="form-group">
-                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="food"> {{trans('common.lbl_status')}} <span class="icnMustSp"></span></label>
+                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="food"> {{trans('common.lbl_status')}}</label>
 
                                         <div class="col-xs-13 col-sm-9">
                                             <select  class="col-xs-2" id="status" name="status">
