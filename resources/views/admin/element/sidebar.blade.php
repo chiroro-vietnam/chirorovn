@@ -26,7 +26,7 @@
         <li class="">
             <a href="#">
                 <i class="menu-icon fa fa-tachometer"></i>
-                <span class="menu-text"> Dashboard </span>
+                <span class="menu-text"> {{trans('common.sidebar_dashboard')}} </span>
             </a>
 
             <b class="arrow"></b>
@@ -36,7 +36,7 @@
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-user"></i>
                 <span class="menu-text">
-                    Recruit
+                    {{trans('common.sidebar_recruit')}}
                 </span>
 
                 <b class="arrow fa fa-angle-down"></b>
@@ -48,7 +48,7 @@
                 <li class="">
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-caret-right"></i>
-                            List
+                            {{trans('common.lbl_list')}}
                     </a>
                     <b class="arrow"></b>
                 </li>
@@ -56,7 +56,7 @@
                 <li class="">
                     <a href="#">
                         <i class="menu-icon fa fa-caret-right"></i>
-                            Add
+                            {{trans('common.lbl_add')}}
                     </a>
                     <b class="arrow"></b>
                 </li>
@@ -68,7 +68,7 @@
         <li class="">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-envelope-o"></i>
-                <span class="menu-text"> Inquiry </span>
+                <span class="menu-text"> {{trans('common.sidebar_inquiry')}} </span>
                 <b class="arrow fa fa-angle-down"></b>
             </a>
 
@@ -77,7 +77,7 @@
                 <li class="">
                     <a href="#">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        List
+                        {{trans('common.lbl_list')}}
                     </a>
                     <b class="arrow"></b>
                 </li>
@@ -90,7 +90,7 @@
         <li class="">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-users"></i>
-                <span class="menu-text">Account </span>
+                <span class="menu-text">{{trans('common.sidebar_account')}} </span>
 
                 <b class="arrow fa fa-angle-down"></b>
             </a>
@@ -101,7 +101,7 @@
                 <li class="">
                     <a href="<?php echo route('admin.users.list'); ?>">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        List
+                        {{trans('common.lbl_list')}}
                     </a>
 
                     <b class="arrow"></b>
@@ -110,7 +110,7 @@
                 <li class="">
                     <a href="<?php echo route('admin.users.add'); ?>">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Add
+                        {{trans('common.lbl_add')}}
                     </a>
 
                     <b class="arrow"></b>
@@ -122,7 +122,7 @@
         <li class="">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-gear"></i>
-                <span class="menu-text"> Setting </span>
+                <span class="menu-text"> {{trans('common.sidebar_setting')}} </span>
 
                 <b class="arrow fa fa-angle-down"></b>
             </a>
@@ -133,7 +133,7 @@
                 <li class="">
                     <a href="#">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Profile
+                        {{trans('common.sidebar_com_info')}}
                     </a>
 
                     <b class="arrow"></b>
@@ -142,7 +142,7 @@
                 <li class="">
                     <a href="#">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Signature
+                        {{trans('common.sidebar_signature')}}
                     </a>
                     <b class="arrow"></b>
                 </li>

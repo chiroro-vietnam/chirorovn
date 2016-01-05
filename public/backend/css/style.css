@@ -1,0 +1,50 @@
+.icnMust {
+    position: right;
+    top: 25px;
+    right: 10px;
+    width: 50px;
+    background-color: #F66;
+    text-align: center;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: normal;
+	margin-left: 10px;
+
+}
+
+.icnMustSp {
+    position: right;
+    top: 25px;
+    right: 10px;
+    width: 50px;
+    background-color: #FFF;
+    text-align: center;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: normal;
+	margin-left: 56px;
+
+}
+
+.txtFormError {
+    padding-top: 2px;
+    color: #F00;
+    font-size: 10px;
+}
+
+.formleft{
+	background-color: #F2F7FA;
+	height:70px;
+	border-right: 1px solid #7FB5CC;
+	padding:25px 10px;
+	box-sizing:border-box;
+}
+
+.formrow{
+	border: 1px solid #7FB5CC;
+	width:100%;
+	height:72px;
+	color:#333;
+	border-bottom:none;
+	line-height:1em;
+}

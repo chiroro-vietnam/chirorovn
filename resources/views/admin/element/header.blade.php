@@ -8,6 +8,7 @@
 
 		<!-- bootstrap & fontawesome -->
 		{!! HTML::style("backend/css/bootstrap.min.css") !!}
+		{!! HTML::style("backend/css/style.css") !!}
 		{!! HTML::style("backend/font-awesome/4.2.0/css/font-awesome.min.css") !!}
 
 		<!-- page specific plugin styles -->

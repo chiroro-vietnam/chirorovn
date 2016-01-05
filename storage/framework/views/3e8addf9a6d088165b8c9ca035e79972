@@ -9,6 +9,8 @@
 		<!-- bootstrap & fontawesome -->
 		<?php echo HTML::style("backend/css/bootstrap.min.css"); ?>
 
+		<?php echo HTML::style("backend/css/style.css"); ?>
+
 		<?php echo HTML::style("backend/font-awesome/4.2.0/css/font-awesome.min.css"); ?>
 
 

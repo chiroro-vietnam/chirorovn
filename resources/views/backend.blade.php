@@ -128,50 +128,12 @@
             @include('admin/element/sidebar')
             
             <!--/sidebar-->
-
             <div class="main-content">
                 <div class="main-content-inner">
-                <!--breadcrumb-->
-                    <div class="breadcrumbs" id="breadcrumbs">
-                        <script type="text/javascript">
-                            try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-                        </script>
-                        <ul class="breadcrumb">
-                            <li>
-                                <i class="ace-icon fa fa-home home-icon"></i>
-                                <a href="#">Home</a>
-                            </li>
 
-                            <li>
-                                <a href="#">Account</a>
-                            </li>
-                            <li class="active">List</li>
-                        </ul>
-                        <!--
-                        <div class="nav-search" id="nav-search">
-                            <form class="form-search" style="margin-top: -3px;">
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="ace-icon fa fa-search"></i>
-                                    </span>
-                                    <input type="text" placeholder="search..." class="form-control search-query">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-purple btn-sm" type="button">
-                                            <span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
-                                            Search
-                                        </button>
-                                    </span>
-                                </div>
-                            </form>
-                        </div><!-- /.nav-search
-                        -->
-                    </div>
-                 <!-- /.breadcrumb -->
-                    <div class="page-content">
-                        <!--Content-->
-                        @yield('content')                       
-                        <!-- /Content -->
-                    </div>
+                    <!--Content-->
+                        @yield('content')
+                    <!-- /Content -->
 
             <!--footer-->
             @include('admin/element/footer')
@@ -194,13 +156,13 @@
 <script src="assets/js/jquery.1.11.1.min.js"></script>
 <![endif]-->
 
-<script src="{{asset('/backend/js/jquery.1.11.1.min.js')}}"></script>
+<script src="{{asset('/backend/js/jquery.2.1.1.min.js')}}"></script>
 
 
         <!--[if !IE]> -->
-        <script type="text/javascript">
-            window.jQuery || document.write("<script src='{{asset("backend/js/jquery.min.js")}}'>"+"<"+"/script>");
-        </script>
+        <!--<script type="text/javascript">
+            window.jQuery || document.write("<script src="{{asset('/backend/js/jquery.min.js')}}">"+"<"+"/script>");
+        </script>-->
 
         <!-- <![endif]-->
 
@@ -210,10 +172,12 @@
 </script>
 <![endif]-->
         <script type="text/javascript">
-            if('ontouchstart' in document.documentElement) document.write("<script src='{{asset("backend/js/jquery.mobile.custom.min.js")}}'>"+"<"+"/script>");
+            if('ontouchstart' in document.documentElement) document.write("<script src="{{asset('/backend/js/jquery.mobile.custom.min.js')}}">"+"<"+"/script>");
         </script>
 
         <script src="{{ asset('/backend/js/bootstrap.min.js') }}"></script>
+
+
 
         <!-- page specific plugin scripts -->
         <script src="{{ asset('/backend/js/bootstrap-tag.min.js') }}"></script>

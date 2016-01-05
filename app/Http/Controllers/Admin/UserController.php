@@ -3,12 +3,14 @@ use App\Http\Controllers\BackendController;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Http\Models\User;
 use Html;
 use URL;
 use Form;
 use View;
 use Request;
 use Validation;
+use Pagination;
 
 class UserController extends BackendController
 { 
@@ -20,7 +22,8 @@ class UserController extends BackendController
     
     public function index()
     {
-        return view('admin.users.list');
+        $users = User::getUserAll();
+        return view('admin.users.list', compact('users'));
     }
 
     //get add user
