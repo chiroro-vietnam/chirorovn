@@ -62,6 +62,9 @@ Route::group(array('prefix' => LaravelLocalization::getCurrentLocale()), functio
         Route::post('admin/account/edit/{id}', ['as' => 'admin.users.edit', 'uses' => 'UserController@postEdit']);
         Route::post('admin/account/del/{id}', ['as' => 'admin.users.del', 'uses' => 'UserController@delUser']);
 
+        Route::get('admin/signature', ['as' => 'admin.signature.index', 'uses' => 'SignatureController@getSignature']);
+        Route::post('admin/signature', ['as' => 'admin.signature.index', 'uses' => 'SignatureController@postSignature']);
+
     });
 
     Route::get('auth/login', function () {

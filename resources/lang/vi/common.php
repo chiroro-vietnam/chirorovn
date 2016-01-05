@@ -43,10 +43,10 @@ return [
 	"lbl_action"				=> "Thao tác",
 	"lbl_user_add"				=> "Thêm người dùng",
 	"lbl_user_edit"				=> "Sửa người dùng",
-	"lbl_first_name"			=> "Tên",
-	"lbl_last_name"				=> "Họ",
+	"lbl_name"					=> "Họ Tên",
 	"lbl_password"				=> "Mật khẩu",
 	"lbl_confirm_password"		=> "Xác nhận mật khẩu",
+	"lbl_furigana"				=> "Furigana",
 
 
 	/*
@@ -63,7 +63,7 @@ return [
 	"sidebar_account"				=> "Tài khoản",
 	"sidebar_setting"				=> "Thiết lập",
 	"sidebar_com_info"				=> "Thông tin công ty",
-	"sidebar_signature"				=> "Sinature",
+	"sidebar_signature"				=> "Signature",
 
 
 	/*

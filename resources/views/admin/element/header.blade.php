@@ -10,7 +10,7 @@
 		{!! HTML::style("backend/css/bootstrap.min.css") !!}
 		{!! HTML::style("backend/css/style.css") !!}
 		{!! HTML::style("backend/font-awesome/4.2.0/css/font-awesome.min.css") !!}
-
+		{!! HTML::style("backend/css/custom.css") !!}
 		<!-- page specific plugin styles -->
 		<!-- text fonts -->
 		{!! HTML::style("backend/fonts.googleapis.com.css") !!}

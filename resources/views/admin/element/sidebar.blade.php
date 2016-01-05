@@ -140,7 +140,7 @@
                 </li>
 
                 <li class="">
-                    <a href="#">
+                    <a href="<?php echo route('admin.signature.index'); ?>">
                         <i class="menu-icon fa fa-caret-right"></i>
                         {{trans('common.sidebar_signature')}}
                     </a>

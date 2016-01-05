@@ -11,15 +11,16 @@ return [
 	|
 	*/
 
-	"status_enable"		=> "Enable",
-	"status_disable"	=> "Disable",
-	"lbl_list"			=> "List",
-	"home_page"			=> "Home",
-	"lbl_add"			=> "Add",
-	"delete_confirm"	=> "Are you sure you want to delete this item?",
-	"lbl_delete"		=> "Delete",
-	"lbl_edit"			=> "Edit",
-	"no_data"			=> "No Data",
+	"status_enable"		=> "Đã kích hoạt",
+	"status_disable"	=> "Chưa kích hoạt",
+	"lbl_list"			=> "Danh sách",
+	"home_page"			=> "Trang chủ",
+	"lbl_add"			=> "Thêm",
+	"delete_confirm"	=> "Bạn có chắc chắn xóa mục này?",
+	"lbl_delete"		=> "Xóa",
+	"lbl_edit"			=> "Sửa",
+	"no_data"			=> "Không có dữ liệu",
+	"icnMust"			=> "Bắt buộc",
 
 	/*
 	|--------------------------------------------------------------------------
@@ -30,16 +31,23 @@ return [
 	|
 	*/
 
-	"user_list_title"			=> "Account",
-	"user_add_succ_msg"			=> "User account has been created successfully.",
-	"user_edit_succ_msg"		=> "User account has been updated successfully.",
-	"lbl_username"				=> "Username",
+	"user_list_title"			=> "Tài khoản",
+	"user_add_succ_msg"			=> "Tài khoản người dùng đã được tạo thành công.",
+	"user_edit_succ_msg"		=> "Tài khoản người dùng đã được cập nhật thành công.",
+	"lbl_username"				=> "Tên người dùng",
 	"lbl_email"					=> "E-mail",
-	"lbl_full_name"				=> "Full Name",
-	"lbl_created"				=> "Created",
-	"lbl_updated"				=> "Updated",
-	"lbl_status"				=> "Status",
-	"lbl_action"				=> "Action",
+	"lbl_full_name"				=> "Tên người dùng",
+	"lbl_created"				=> "Ngày tạo",
+	"lbl_updated"				=> "Ngày sửa",
+	"lbl_status"				=> "Trạng thái",
+	"lbl_action"				=> "Thao tác",
+	"lbl_user_add"				=> "Thêm người dùng",
+	"lbl_user_edit"				=> "Sửa người dùng",
+	"lbl_name"					=> "Họ Tên",
+	"lbl_password"				=> "Mật khẩu",
+	"lbl_confirm_password"		=> "Xác nhận mật khẩu",
+	"lbl_furigana"				=> "Furigana",
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -50,12 +58,12 @@ return [
 	|
 	*/
 	"sidebar_dashboard"				=> "Dashboard",
-	"sidebar_recruit"				=> "Recruit",
-	"sidebar_inquiry"				=> "Inquiry",
-	"sidebar_account"				=> "Accounts",
-	"sidebar_setting"				=> "Setting",
-	"sidebar_com_info"				=> "Company infomation",
-	"sidebar_signature"				=> "Sinature",
+	"sidebar_recruit"				=> "Tuyển dụng",
+	"sidebar_inquiry"				=> "Liên hệ",
+	"sidebar_account"				=> "Tài khoản",
+	"sidebar_setting"				=> "Thiết lập",
+	"sidebar_com_info"				=> "Thông tin công ty",
+	"sidebar_signature"				=> "Signature",
 
 
 	/*
@@ -67,10 +75,10 @@ return [
 	|
 	*/
 
-	"lbl_change_passwd"			=> "Change password",
-	"lbl_change"				=> "Change",
-	"lbl_curr_passwd"			=> "Current Passord",
-	"lbl_new_passwd"			=> "New Password",
-	"lbl_confirm_new_passwd"	=> "Confirm New Password",
+	"lbl_change_passwd"			=> "Thay đổi mật khẩu",
+	"lbl_change"				=> "Thay đổi",
+	"lbl_curr_passwd"			=> "Mật khẩu hiện tại",
+	"lbl_new_passwd"			=> "Mật khẩu mới",
+	"lbl_confirm_new_passwd"	=> "Xác nhận mật khẩu mới",
 
 ];

@@ -19,7 +19,6 @@
     </div>
  <!-- /.breadcrumb -->
     <div class="page-content">
-
         <div class="page-header">
             <h1>{{trans('common.user_list_title')}}</h1>
         </div><!-- /.page-header -->
@@ -32,13 +31,11 @@
                         <button class="btn btn-sm btn-danger pull-left">
                             <i class="ace-icon fa fa-trash-o bigger-110"></i>
                             {{trans('common.lbl_delete')}}
-                        </button>
-                       
+                        </button>                       
                     </div>
                     @endif
 
                     <div class="pull-right tableTools-container">
-
                         <button class="btn btn-sm btn-primary pull-right" onClick="parent.location='<?php echo route('admin.users.add'); ?>'">
                             <i class="ace-icon fa fa fa-plus-square bigger-110"></i>  {{trans('common.lbl_add')}} </button>
                     </div>
@@ -86,7 +83,7 @@
                                         <a href="#">{{$user->username}}</a>
                                     </td>
                                     <td>{{$user->email}}</td>
-                                    <td class="hidden-480">{{$user->first_name}} {{$user->last_name}}</td>
+                                    <td class="hidden-480">{{$user->name}}</td>
                                     <td class="hidden-480">{{$user->created_at}}</td>
 
                                     <td class="hidden-480 center">
@@ -105,7 +102,7 @@
 
                                     <td class="center">
                                         <div class="hidden-sm hidden-xs action-buttons">
-                                            <a class="green" href="#">
+                                            <a class="green" href="<?php echo route('admin.users.edit', $user->id); ?>">
                                                 <i class="ace-icon fa fa-pencil bigger-130"></i>
                                             </a>
 
@@ -119,9 +116,7 @@
                                                 <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
                                                     <i class="ace-icon fa fa-caret-down icon-only bigger-110"></i>
                                                 </button>
-
                                                 <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-
                                                     <li>
                                                         <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
                                                             <span class="green">

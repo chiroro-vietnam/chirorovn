@@ -9,8 +9,16 @@ use URL;
 use Form;
 use View;
 use Request;
-use Validation;
+use Validator;
 use Pagination;
+use Input;
+use Lang;
+use LaravelLocalization;
+use Redirect;
+use DB;
+use Session;
+
+
 
 class UserController extends BackendController
 { 
@@ -38,12 +46,60 @@ class UserController extends BackendController
 
     //get edit user
     public function getEdit($id){
-    	return view('admin.users.edit');
+
+        // echo "<pre>";
+        // print_r( Lang::get('validation.account'));exit;
+
+        $data = User::getUserById($id);
+    	return view('admin.users.edit', compact('data'));
     }
 
     //post edit user
-    public function postEdit($id){
-    	
+    public function postEdit($id){        
+
+        $data_kana = array(
+                'username'      => Input::get('username'),
+                'email'         => Input::get('email'),
+                'password'      => Input::get('password'),
+                'name'          => Input::get('name'),
+                'furigana'      => Input::get('furigana'),
+                'status'        => Input::get('status'),
+                'last_login'    => date('Y-m-d H:i:s')
+            );
+
+         $data = array(
+                'username'      => Input::get('username'),
+                'email'         => Input::get('email'),
+                'password'      => Input::get('password'),
+                'name'          => Input::get('name'),               
+                'status'        => Input::get('status'),
+                'last_login'    => date('Y-m-d H:i:s')
+            );
+
+        if(LaravelLocalization::getCurrentLocale() == 'vi')
+        {
+            $massages = User::$vi_msg;
+        }elseif(LaravelLocalization::getCurrentLocale() == 'en'){
+            $massages = User::$en_msg;
+        }else{
+            $massages = User::$ja_msg;
+            $inputData = $data_kana;
+        }
+
+        $validator = Validator::make(Input::all(), User::$rules, $massages);
+        if($validator->passes()){
+            DB::table('users')
+                    ->where('id', $id)
+                    ->update($inputData);
+
+            Session::flash('success', 'User updated successful');
+            return Redirect::to(LaravelLocalization::getCurrentLocale().'/admin/account');
+        }
+
+        return Redirect::to(LaravelLocalization::getCurrentLocale().'/admin/account/edit/'.$id)
+                                ->withErrors($validator)
+                                ->withInput();
+       
     }
 
     //post delete user

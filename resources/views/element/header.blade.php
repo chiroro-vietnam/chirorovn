@@ -2,7 +2,6 @@
 @yield('style')
 
     {!! HTML::style('frontend/css/common.css') !!}
-
 @yield('script')
     {!! HTML::script('frontend/js/jquery.cookie.js'); !!}
 
