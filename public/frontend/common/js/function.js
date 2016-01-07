@@ -65,6 +65,7 @@ $('#subconfirm').click(function(){
 	$('#subsendcontent').css('display','block');
 	$('#subconfirm').css('display','none');
 	$('#subconfirm').css('display','none');
+	$('.formrow').addClass('formrowsp');
 });
 $('#subsendcontent').click(function(){
 	$('.form-control').css('display','none');

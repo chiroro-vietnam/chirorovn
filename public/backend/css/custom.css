@@ -616,9 +616,9 @@ a:focus {
     margin-bottom: 0
 }
 
-.navbar-header {
+/*.navbar-header {
     background: #34495E;
-}
+}*/
 
 .navbar-right {
     margin-right: 0;
@@ -2544,6 +2544,10 @@ select.parsley-error {
     left: 0;
     -moz-animation: .7s 1 shake linear;
     -webkit-animation: 0.7s 1 shake linear;
+}
+
+li.parsley-required{
+	margin-left:-25px;
 }
 
 .item input,

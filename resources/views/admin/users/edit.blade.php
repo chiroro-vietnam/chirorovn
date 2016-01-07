@@ -30,6 +30,7 @@
                         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> {{trans('common.lbl_username')}}<span class="icnMust">{{trans('common.icnMust')}}</span></label>
                         <div class="col-sm-9">
                             <input type="text" id="username" name="username" value="{{$data->username}}" placeholder="{{trans('common.lbl_username')}}" class="col-xs-10 col-sm-5" autofocus/>                                            
+                        <ul class="parsley-errors-list filled" id="parsley-id-3888"><li class="parsley-required">※512文字以内で入力してください。</li></ul>
                         </div>
                         @if ($errors->first('username'))
                            <span class="help-block">{!! $errors->first('username') !!}</span>

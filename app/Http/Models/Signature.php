@@ -6,7 +6,6 @@ use DB;
 class Signature extends Model {
     protected static $table = 'signature';
 
-
     //get  signature by locale
     public static function getSignByLocale($locale){
         return DB::table(static::$table)

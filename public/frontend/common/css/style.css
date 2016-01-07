@@ -29,7 +29,9 @@ h3{
 h4{
 	font-size: 20px;
 }
-
+h5{
+	font-size: 16px;
+}
 a{
 	color: #fa5c58;
 	text-decoration: none;
@@ -121,6 +123,7 @@ NAVBAR
 	border: none;
 	border-bottom: 1px solid #d2d2d2;
 	transition: all 0.250s;
+	clear:both;
 }
 
 .navbar-default .nav{
@@ -142,9 +145,10 @@ NAVBAR
 }
 
 .navbar-default .navbar-nav > li > a:hover, 
-.navbar-default .navbar-nav > li > a:focus{
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a.active{
 	color: #FD851B;
-	border:none;
+	border:none!important;
 }
 
 .jumbotron{
@@ -315,13 +319,12 @@ figcaption span {
 }
 
 .box h3,
-.box h4
 .box p,
 .box li
 {
 	color: #fff;
 }
-.box h4{
+.box h4,.box h5{
 	color:#fd851b;
 }
 .box .delimiter,
@@ -375,8 +378,6 @@ ul.social li a{
 	text-decoration: none;
 
 }
-
-
 ul.social li a i{
 	color: #fff;
 	width: 32px;
@@ -728,6 +729,7 @@ footer a{
 	}
 	#position p, address{
 		padding-left:20px;
+		padding-right:20px;
 	}
 	iframe{
 		height:350px;
@@ -738,6 +740,12 @@ footer a{
 		border-left:none;
 		border-right:none;
 		border:none;
+	}
+	.formrowsp{
+		height:auto;
+	}
+	#subsendcontent{
+		margin-top:50px;
 	}
 	.formEntry {
 		width: none;
@@ -754,7 +762,7 @@ footer a{
 		margin-top:50px;
 		padding-left:15px;
 	}
-	.formleft,.blog-items,.template{
+	.formleft,.projects,.template,.bx-controls{
 		display:none;
 	}
 	.template{
@@ -782,7 +790,13 @@ footer a{
 	#recruit .box{
 		padding:40px 5px;
 	}
-	
+	.control-slider{
+		background:rgba(0, 90, 126, 0.95) none repeat scroll 0% 0%;
+		width:100%;
+		height:60px;
+		padding:10px 0px;
+		text-align:center;
+	}
 }
 .bxslider {
     margin: 0;

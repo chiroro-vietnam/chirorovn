@@ -29,6 +29,7 @@
                         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo e(trans('common.lbl_username')); ?><span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span></label>
                         <div class="col-sm-9">
                             <input type="text" id="username" name="username" value="<?php echo e($data->username); ?>" placeholder="<?php echo e(trans('common.lbl_username')); ?>" class="col-xs-10 col-sm-5" autofocus/>                                            
+                        <ul class="parsley-errors-list filled" id="parsley-id-3888"><li class="parsley-required">※512文字以内で入力してください。</li></ul>
                         </div>
                         <?php if($errors->first('username')): ?>
                            <span class="help-block"><?php echo $errors->first('username'); ?></span>

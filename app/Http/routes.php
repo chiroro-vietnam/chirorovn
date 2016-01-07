@@ -52,7 +52,6 @@ Route::group(array('prefix' => LaravelLocalization::getCurrentLocale()), functio
     // Route::get('manage/logout', ['as' => 'admin.auth.logout', 'uses' => 'Admin\AdminController@logout']);
     //Admin
     Route::group(array('namespace' => 'Admin'), function () {
-
         
         Route::get('admin/dashboard', ['as' => 'admin.dashboard', 'uses' => 'DashboardController@index']);
         Route::get('admin/account', ['as' => 'admin.users.list', 'uses' => 'UserController@index']);
@@ -62,8 +61,17 @@ Route::group(array('prefix' => LaravelLocalization::getCurrentLocale()), functio
         Route::post('admin/account/edit/{id}', ['as' => 'admin.users.edit', 'uses' => 'UserController@postEdit']);
         Route::post('admin/account/del/{id}', ['as' => 'admin.users.del', 'uses' => 'UserController@delUser']);
 
-        Route::get('admin/signature', ['as' => 'admin.signature.index', 'uses' => 'SignatureController@getSignature']);
-        Route::post('admin/signature', ['as' => 'admin.signature.index', 'uses' => 'SignatureController@postSignature']);
+        //Setting signature
+        Route::get('admin/setting/signature', ['as' => 'admin.setting.signature', 'uses' => 'SettingController@getSignature']);
+        Route::post('admin/setting/signature', ['as' => 'admin.setting.signature', 'uses' => 'SettingController@postSignature']);
+        //Setting company
+        Route::get('admin/setting/company', ['as' => 'admin.setting.company', 'uses' => 'SettingController@getCompany']);
+        Route::post('admin/setting/company', ['as' => 'admin.setting.company', 'uses' => 'SettingController@postCompany']);
+
+        //Inquiry
+        Route::get('admin/inquiry', ['as' => 'admin.inquiry.index', 'uses' => 'InquiryController@index']);
+        Route::post('admin/inquiry/{id}', ['as' => 'admin.inquiry.read', 'uses' => 'InquiryController@reader']);
+        Route::get('admin/inquiry/detail/{id}', ['as' => 'admin.inquiry.detail', 'uses' => 'InquiryController@getDetail']);
 
     });
 

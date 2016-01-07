@@ -81,4 +81,48 @@ return [
 	"lbl_new_passwd"			=> "Mật khẩu mới",
 	"lbl_confirm_new_passwd"	=> "Xác nhận mật khẩu mới",
 
+	/*
+	|--------------------------------------------------------------------------
+	| Inquiry
+	|--------------------------------------------------------------------------
+	|
+	|Inquiry admin layout
+	|
+	*/
+	"lbl_inquiry"				=> "Liên hệ",
+	"lbl_inquiry_list"			=> "Danh sách",
+	"lbl_inquiry_header"		=> "Danh sách liên hệ",
+	"lbl_inquiry_company"		=> "Công ty",
+	"lbl_inquiry_title"			=> "Chủ đề",
+	"lbl_inquiry_name"			=> "Tên",
+	"lbl_inquiry_furigana"		=> "ふりがな",
+	"lbl_inquiry_address"		=> "Địa chỉ",
+	"lbl_inquiry_phone"			=> "Số điện thoại",
+	"lbl_inquiry_email"			=> "E-mail",
+	"lbl_contact_way"			=> "Đia chỉ liên hệ",
+	"lbl_inquiry_language"		=> "Ngôn ngữ",
+	"lbl_inquiry_comment"		=> "Nội dung",
+	"lbl_inquiry_unread"		=> "Chưa xem",
+	"lbl_inquiry_read"			=> "Đã xem",
+	"lbl_inquiry_detail"		=> "Chi tiết",
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| Menu frontend
+	|--------------------------------------------------------------------------
+	|
+	|Menu frontend layout
+	|
+	*/
+//Menu 
+	"lbl_front_homepage"		=> "HOME",
+	"lbl_front_service"			=> "SERVICE",
+	"lbl_front_template"		=> "TEMPLATE",
+	"lbl_front_information"		=> "COMPANY",
+	"lbl_front_position"		=> "POSITION",
+	"lbl_front_recruit"			=> "RECRUIT",
+	"lbl_front_inquiry"			=> "CONTACT",
+
+	
 ];

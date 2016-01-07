@@ -22,7 +22,7 @@
                 </button>
 
                 <div class="navbar-header pull-left">
-                    <a href="#" class="navbar-brand">
+                    <a href="<?php echo route('admin.dashboard'); ?>" class="navbar-brand">
                     <img class="nav-user-photo" src="<?php echo e(asset("/backend/img/logo.png")); ?>" alt="user" width="180" height="25"/>
                         
                     </a>

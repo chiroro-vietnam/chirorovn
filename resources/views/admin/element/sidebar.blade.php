@@ -24,7 +24,7 @@
 
     <ul class="nav nav-list">
         <li class="">
-            <a href="#">
+            <a href="<?php echo route('admin.dashboard'); ?>">
                 <i class="menu-icon fa fa-tachometer"></i>
                 <span class="menu-text"> {{trans('common.sidebar_dashboard')}} </span>
             </a>
@@ -75,7 +75,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li class="">
-                    <a href="#">
+                    <a href="<?php echo route('admin.inquiry.index');?>">
                         <i class="menu-icon fa fa-caret-right"></i>
                         {{trans('common.lbl_list')}}
                     </a>
@@ -131,7 +131,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="#">
+                    <a href="<?php echo route('admin.setting.company'); ?>">
                         <i class="menu-icon fa fa-caret-right"></i>
                         {{trans('common.sidebar_com_info')}}
                     </a>
@@ -140,7 +140,7 @@
                 </li>
 
                 <li class="">
-                    <a href="<?php echo route('admin.signature.index'); ?>">
+                    <a href="<?php echo route('admin.setting.signature'); ?>">
                         <i class="menu-icon fa fa-caret-right"></i>
                         {{trans('common.sidebar_signature')}}
                     </a>
