@@ -421,3 +421,15 @@ Stack trace:
 #46 D:\xampp\htdocs\chiroro\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(84): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #47 D:\xampp\htdocs\chiroro\public\index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #48 {main}  
+[2016-01-18 09:34:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'Mail' (T_STRING)' in D:\xampp\htdocs\chiroro\app\Http\Controllers\Frontend\InquiryController.php:100
+Stack trace:
+#0 {main}  
+[2016-01-18 09:34:50] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'Mail' (T_STRING)' in D:\xampp\htdocs\chiroro\app\Http\Controllers\Frontend\InquiryController.php:100
+Stack trace:
+#0 {main}  
+[2016-01-18 09:35:30] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'Mail' (T_STRING)' in D:\xampp\htdocs\chiroro\app\Http\Controllers\Frontend\InquiryController.php:100
+Stack trace:
+#0 {main}  
+[2016-01-18 09:35:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'Mail' (T_STRING)' in D:\xampp\htdocs\chiroro\app\Http\Controllers\Frontend\InquiryController.php:100
+Stack trace:
+#0 {main}  
