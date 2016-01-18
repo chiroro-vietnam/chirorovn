@@ -81,7 +81,7 @@
 					<div class="form-group col-md-3 formleft">
 						<span>{{trans('common.lbl_inquiry_comment')}}</span><span class="icnMust">Required</span>
 					</div>
-					<div class="form-group col-md-9">
+					<div class="form-group col-md-9 formright">
 						<p class="lbFormConfirm"><span class="lbtitlesp">{{trans('common.lbl_inquiry_comment')}}: </span><?php echo nl2br($data['comment']);?></p>
 					</div>
 				</div>

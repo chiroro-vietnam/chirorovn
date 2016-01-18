@@ -544,11 +544,22 @@ form{
 }
 
 .comment{
-    height:240px;
 	border-bottom: 1px solid #7FB5CC;
+	display:table;
 }
 .comment .formleft{
-	height:238px;
+	height:auto;
+	display:table-cell;
+	border-right:none;
+	vertical-align:top;
+}
+.comment .formright{
+	display:table-cell;
+	border-left:1px solid #7FB5CC;
+	margin-left:-1px;
+}
+.comment .col-md-3 {
+	float:none;
 }
 .lbFormConfirm{
 	color:#8e8e8e;
