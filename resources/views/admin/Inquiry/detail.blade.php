@@ -1,7 +1,6 @@
 @extends('backend')
 
 @section('content')
-
 <!-- bootstrap wysihtml5 - text editor -->
 <!--breadcrumb-->
     <div class="breadcrumbs" id="breadcrumbs">
