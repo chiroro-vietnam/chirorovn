@@ -22,48 +22,61 @@
  <!-- /.breadcrumb -->
     <div class="page-content">
         <div class="page-header">
-            <h1>{{trans('common.sidebar_signature')}}</h1>
+            <h1>{{trans('common.setting_signature_content')}}</h1>
         </div><!-- /.page-header -->
+            <div class="clearfix"></div>
+                <div class="row">
 
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                           <div>
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success">
+                                        <button type="button" class="close" data-dismiss="alert">
+                                            <i class="ace-icon fa fa-times"></i>
+                                        </button>
+                                        <li style="margin-left: 7px;">{{ $message }}</li>
+                                    </div>
 
-                <div class="clearfix"></div>
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="x_panel">
-
-                                <div class="x_content">
-                                    <br />
-                                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" style="top: 144px;">E-mail Signature <span class="icnMust">{{trans('common.icnMust')}}</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                
-                                                <textarea class="form-control" rows="10" cols="50" id="signature" name="signature" value="{{$data[0]->content}}">
-                                                    {{$data[0]->content}}
-                                                </textarea>
-                                                <ul class="parsley-errors-list filled" id="parsley-id-3888"><li class="parsley-required">※512文字以内で入力してください。</li></ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="ln_solid"></div>
-                                        <div class="form-group">
-                                            <div class="col-md-3 col-sm-3 col-xs-9 col-md-offset-3">
-                                                <button type="button" class="width-45 pull-right btn btn-sm btn-success">
-                                                            <span class="bigger-110">Submit</span>
-
-                                                            <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-                                                        </button>
-                                            </div>
-                                        </div>
-
-                                    </form>
+                                    @elseif($message = Session::get('error'))
+                                       <div class="alert alert-danger">
+                                        <button type="button" class="close" data-dismiss="alert">
+                                            <i class="ace-icon fa fa-times"></i>
+                                        </button>
+                                        <li style="margin-left: 7px;">{{ $message }}</li>
+                                    </div>
+                                @endif
+                            </div>
+                        <div class="x_panel">                        
+                            <div class="x_content">  
+                            <br />
+                            {!! Form::open( ['method' => 'post', 'route' => 'admin.setting.signature', 'class' => 'form-horizontal form-label-left', 'enctype'=>'multipart/form-data'] ) !!}
+                                <input type="hidden" name="id" value="{{@$data->id}}" id="id">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" style="top: 144px;">{{trans('common.setting_signature_content')}} <span class="icnMust">{{trans('common.icnMust')}}</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">                                            
+                                        <textarea class="form-control" rows="10" cols="50" id="content" name="content" value="{{@$data->content}}">{{@$data->content}}</textarea>
+                                        <ul class="parsley-errors-list filled" id="parsley-id-3888">
+                                            <li class="parsley-required">
+                                            @if ($errors->first('content')) ※ {!! $errors->first('content') !!} @endif
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
+
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-3 col-sm-3 col-xs-9 col-md-offset-3">
+                                        <button type="submit" class="width-45 pull-right btn btn-sm btn-success">
+                                            <span class="bigger-110">&nbsp;&nbsp;{{trans('common.btn_setting_signature_save')}}&nbsp;&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            {!! Form::close() !!}
                             </div>
                         </div>
-
                     </div>
-    </div>
+                </div>
+        </div>
 
 @endsection

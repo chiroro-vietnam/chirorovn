@@ -1,38 +1,217 @@
-@extends('backend')
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Chiroro-Net Viet</title>
+		<link rel="icon" href="{{asset('/favicon/favicon.png')}}" type="image/gif" >
+		<meta name="description" content="User login page" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-@section('content')
-<head>
-<meta charset="utf-8">
-<title>Admin Login</title>
-<link href="{{ asset('backend/css/admin.css') }}" rel="stylesheet">
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="{{asset('/backend/css/bootstrap.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('/backend/font-awesome/4.2.0/css/font-awesome.min.css')}}" />
 
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<!-- text fonts -->
+		<link rel="stylesheet" href="{{asset('/backend/fonts/fonts.googleapis.com.css')}}" />
 
-</head>
-<body>
-<div class="container">
-	<section id="content">
-		<form class="form-horizontal" role="form" method="POST" action="{{ URL::route('admin.auth.login') }}">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<h1>管理者ログイン</h1>
-			<div>
-			    @if ($message = Session::get('success'))
-			    <div class="alert alert-danger alert-block" style="width: 320px; margin-left: 5px; height: 20px;">
-<!--			      <button type="button" class="close" data-dismiss="alert">&times;</button>-->
-			      {{ $message }}
-			    </div>
-			    @endif
-			<div>
-				<input type="text" placeholder="ユーザーID" id="username" name="email" autofocus/>
-			</div>
-			<div>
-				<input type="password" placeholder="パスワード" id="password" name="password" />
-			</div>
-			<div>
-				<input class="button blue" type="submit" value="ログイン" />
-			</div>
-		</form><!-- form -->		
-	</section><!-- content -->
-</div><!-- container -->
-</body>
-@endsection
+		<!-- ace styles -->
+		<link rel="stylesheet" href="{{asset('/backend/css/ace.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('/backend/css/style.css')}}" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+		<![endif]-->
+		<link rel="stylesheet" href="{{asset('/backend/css/ace-rtl.min.css')}}" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="login-layout">
+		<div class="main-container">
+			<div class="main-content">
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+						<div class="login-container">
+							<div class="center">
+								<h1>
+								<img src="{{asset('backend/img/logo_backend.png')}}" width="370" height="60" alt=""></li>
+									
+								</h1>
+								<h4 class="blue" id="id-company-text"></h4>								
+							</div>
+
+							<div class="space-6"></div>
+
+							<div class="position-relative">
+								<div id="login-box" class="login-box visible widget-box no-border">
+									<div class="widget-body">
+										<div class="widget-main">
+											<h4 class="header blue lighter bigger">												
+												<p class="center"><strong>{{trans('common.lbl_header_login')}}</strong></p>
+											</h4>
+											<div>
+													@if ($message = Session::get('success'))
+											            <div class="alert alert-success">
+											            <!-- <button data-dismiss="alert" class="close" type="button">
+															<i class="ace-icon fa fa-times"></i>
+														</button> -->
+											                    <li style="margin-left: 7px;">{{ $message }}</li>
+											            </div>
+														@elseif($message = Session::get('error'))
+											            <div class="alert alert-danger">
+												            <!-- <button data-dismiss="alert" class="close" type="button">
+																<i class="ace-icon fa fa-times"></i>
+															</button> -->
+											                    <li style="margin-left: 7px;">{{ $message }}</li>
+											            </div>
+											        @endif
+											</div>
+											<div class="space-6"></div>
+
+											{!! Form::open( ['method' => 'post', 'route' => 'admin.auth.login', 'enctype'=>'multipart/form-data'] ) !!}											
+												<fieldset>
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control" name="username" id="username" placeholder="{{trans('common.lbl_userid')}}" autofocus/>
+															<i class="ace-icon fa fa-user"></i>
+														</span>
+														<p class="text-error">
+															@if ($errors->first('username')) 
+																※ {!! $errors->first('username') !!} 
+															@endif 
+														</p>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control" name="password" id="password" placeholder="{{trans('common.lbl_passwd')}}" />
+															<i class="ace-icon fa fa-lock"></i>
+														</span>
+														<p class="text-error">
+															@if ($errors->first('password'))
+														 		※ {!! $errors->first('password') !!} 
+														 	@endif 
+														 </p>
+													</label>
+
+													<div class="space"></div>
+
+													<div class="clearfix">
+														<button type="reset" class="width-30 pull-left btn btn-sm">
+															<i class="ace-icon fa fa-refresh"></i>
+															<span class="bigger-110">{{trans('common.btn_reset')}}</span>
+														</button>
+
+														<button type="submit" class="width-65 pull-right btn btn-sm btn-primary">
+															<i class="ace-icon fa fa-key"></i>
+															<span class="bigger-110">{{trans('common.btn_login')}}</span>
+														</button>
+													</div>
+
+													<div class="space-4"></div>
+												</fieldset>
+											{!! Form::close() !!}
+										</div><!-- /.widget-main -->
+		
+									</div><!-- /.widget-body -->
+								</div><!-- /.login-box -->
+
+							</div><!-- /.position-relative -->
+
+							<div class="navbar-fixed-top align-right">
+								<br />
+								&nbsp;
+								<a id="btn-login-dark" href="#">Dark</a>
+								&nbsp;
+								<span class="blue">/</span>
+								&nbsp;
+								<a id="btn-login-blur" href="#">Blur</a>
+								&nbsp;
+								<span class="blue">/</span>
+								&nbsp;
+								<a id="btn-login-light" href="#">DarkSlateGray</a>
+								&nbsp; &nbsp; &nbsp;
+							</div>
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.main-content -->
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="{{asset('/backend/js/jquery.2.1.1.min.js')}}"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="assets/js/jquery.1.11.1.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='{{asset("/backend/js/jquery.min.js")}}'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='{{asset("/backend/js/jquery.mobile.custom.min.js")}}''>"+"<"+"/script>");
+		</script>
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+			jQuery(function($) {
+			 $(document).on('click', '.toolbar a[data-target]', function(e) {
+				e.preventDefault();
+				var target = $(this).data('target');
+				$('.widget-box.visible').removeClass('visible');//hide others
+				$(target).addClass('visible');//show target
+			 });
+			});			
+			
+			
+			//you don't need this, just used for changing background
+			jQuery(function($) {
+			 $('#btn-login-dark').on('click', function(e) {
+				$('body').attr('class', 'login-layout');
+				$('#id-text2').attr('class', 'white');
+				$('#id-company-text').attr('class', 'blue');
+				
+				e.preventDefault();
+			 });
+			 $('#btn-login-light').on('click', function(e) {
+				$('body').attr('class', 'login-layout light-login');
+				$('#id-text2').attr('class', 'grey');
+				$('#id-company-text').attr('class', 'blue');
+				
+				e.preventDefault();
+			 });
+			 $('#btn-login-blur').on('click', function(e) {
+				$('body').attr('class', 'login-layout blur-login');
+				$('#id-text2').attr('class', 'white');
+				$('#id-company-text').attr('class', 'light-blue');
+				
+				e.preventDefault();
+			 });
+			 
+			});
+		</script>
+	</body>
+</html>

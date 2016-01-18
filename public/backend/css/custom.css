@@ -3940,7 +3940,7 @@ html > body > .ui-pnotify {
     margin-left: .2em;
 }
 /* theming */
-
+/*
 .alert-success {
     color: #ffffff;
     background-color: rgba(38, 185, 154, 0.88);
@@ -3972,7 +3972,7 @@ html > body > .ui-pnotify {
     background-color: rgba(52, 73, 94, 0.88);
     border-color: rgba(52, 73, 94, 0.88);
 }
-
+*/
 .btn-dark:hover {
     color: #F7F7F7;
 }

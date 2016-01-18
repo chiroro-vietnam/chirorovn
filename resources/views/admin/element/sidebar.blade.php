@@ -46,17 +46,17 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="#" class="dropdown-toggle">
+                    <a href="<?php echo route('admin.recruit.index');?>">
                         <i class="menu-icon fa fa-caret-right"></i>
-                            {{trans('common.lbl_list')}}
+                            {{trans('common.lbl_recruit_list')}}
                     </a>
                     <b class="arrow"></b>
                 </li>
 
                 <li class="">
-                    <a href="#">
+                    <a href="<?php echo route('admin.recruit.add');?>">
                         <i class="menu-icon fa fa-caret-right"></i>
-                            {{trans('common.lbl_add')}}
+                            {{trans('common.lbl_recruit_add')}}
                     </a>
                     <b class="arrow"></b>
                 </li>
@@ -68,7 +68,9 @@
         <li class="">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-envelope-o"></i>
-                <span class="menu-text"> {{trans('common.sidebar_inquiry')}} </span>
+                <span class="menu-text"> {{trans('common.sidebar_inquiry')}} 
+                <span class="badge badge-primary"><?php echo @NOTIFY;?></span>
+                </span>
                 <b class="arrow fa fa-angle-down"></b>
             </a>
 

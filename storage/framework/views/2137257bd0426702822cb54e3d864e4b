@@ -2,8 +2,9 @@
 <footer>
 	<div class="container">
 		<p class="copyright">
-			(c) Chiroro-Net Viet Co.,Ltd.
+			Copyright &copy; 2015 - <?php echo date('Y');?> <strong>Chiroro-Net Viet Co.,Ltd</strong>. All Right Reserved.
 		</p>
+		<a href="<?php echo route('frontend.homepage'); ?>#home" class="back-to-top"><img src="<?php echo e(asset('frontend/common/image/icon-top.png')); ?>"/></a>
 		<!--<ul class="social">
 			<li style="visibility: visible; animation-name: bounceIn;" class="wow bounceIn animated"><a href="http://www.facebook.com/zoomtovietnam/" target="_blank"><i class="fa fa-facebook"></i></a></li>
 			<li style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;" class="wow bounceIn animated" data-wow-delay="0.1s"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>

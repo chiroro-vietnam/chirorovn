@@ -25,29 +25,42 @@ class InquiryController extends BackendController
     public function __construct()
     {
         parent::__construct();
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
     
     public function index()
     {
         $lang = DB::table('language')
-                            ->where('is_deleted', ACTIVE)
-                            ->lists('name', 'id');
+                    ->where('is_deleted', ACTIVE)
+                    ->lists('name', 'locale');
         $data = Inquiry::getContact();
         return view('admin.inquiry.index', compact('data', 'lang'));
     }
 
     public function getDetail($id)
     {
+         $lang = DB::table('language')
+                    ->where('is_deleted', ACTIVE)
+                    ->lists('name', 'locale');
         $data = Inquiry::getContactById($id);
-        return view('admin.inquiry.detail', compact('data'));
+        $this->reader($id);
+        return view('admin.inquiry.detail', compact('data', 'lang'));
     }
 
     public function reader($id)
     {
+        DB::table('contact')
+                    ->where('id', $id)
+                    ->update(array('reader' => 0));
+    }  
 
-    }
-
-    
+    public function delete($id)
+    {
+        DB::table('contact')
+                    ->where('id', $id)
+                    ->update(array('is_deleted' => INACTIVE));
+         Session::flash('success', trans('common.inquiry_del_succ_msg'));
+        return Redirect::to(LaravelLocalization::getCurrentLocale().'/admin/inquiry');  
+    }   
 
 }

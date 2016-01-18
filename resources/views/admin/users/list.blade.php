@@ -24,22 +24,32 @@
         </div><!-- /.page-header -->
             
         <div class="row">
-            <div class="col-xs-12">    
-                <div class="clearfix"> 
-                    @if(count($users) > 0)      
-                    <div class="pull-left tableTools-container">
-                        <button class="btn btn-sm btn-danger pull-left">
-                            <i class="ace-icon fa fa-trash-o bigger-110"></i>
-                            {{trans('common.lbl_delete')}}
-                        </button>                       
-                    </div>
-                    @endif
+            <div class="col-xs-12">
 
+                <div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                            <li style="margin-left: 7px;">{{ $message }}</li>
+                        </div>
+
+                        @elseif($message = Session::get('error'))
+                           <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                            <li style="margin-left: 7px;">{{ $message }}</li>
+                        </div>
+                    @endif
+                </div>
+                
+                <div class="clearfix"> 
                     <div class="pull-right tableTools-container">
                         <button class="btn btn-sm btn-primary pull-right" onClick="parent.location='<?php echo route('admin.users.add'); ?>'">
                             <i class="ace-icon fa fa fa-plus-square bigger-110"></i>  {{trans('common.lbl_add')}} </button>
                     </div>
-
                 </div>
                 <!-- div.table-responsive -->
 
@@ -48,23 +58,18 @@
                     <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th class="center" width="6px">
-                                    <label class="pos-rel">
-                                        <input type="checkbox" class="ace" />
-                                        <span class="lbl"></span>
-                                    </label>
-                                </th>
-                                <th>{{trans('common.lbl_username')}}</th>
-                                <th>{{trans('common.lbl_email')}}</th>
-                                <th class="hidden-480">{{trans('common.lbl_full_name')}}</th>
+                                <th class="center" width="3%">#</th>
+                                <th class="center" width="12%">{{trans('common.lbl_username')}}</th>
+                                <th class="center" width="15%">{{trans('common.lbl_email')}}</th>
+                                <th class="hidden-480 center" width="15%">{{trans('common.lbl_full_name')}}</th>
 
-                                <th class="hidden-480">
+                                <th class="hidden-480 center" width="11%">
                                     <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
                                     {{trans('common.lbl_created')}}
                                 </th>
-                                <th class="hidden-480 center">{{trans('common.lbl_status')}}</th>
+                                <th class="hidden-480 center" width="7%">{{trans('common.lbl_status')}}</th>
 
-                                <th class="center" width="100px">{{trans('common.lbl_action')}}</th>
+                                <th class="center" width="6%">{{trans('common.lbl_action')}}</th>
                             </tr>
                         </thead>
 
@@ -73,19 +78,15 @@
                             @foreach($users as $user)
                                 <tr>
                                     <td class="center">
-                                        <label class="pos-rel">
-                                            <input type="checkbox" class="ace" name="chkUser" id="ace"/>
-                                            <span class="lbl"></span>
+                                        <label class="pos-rel1">
+                                            {{$user->id}}                                           
                                         </label>
                                     </td>
 
-                                    <td>
-                                        <a href="#">{{$user->username}}</a>
-                                    </td>
+                                    <td><a href="#">{{$user->username}}</a></td>
                                     <td>{{$user->email}}</td>
-                                    <td class="hidden-480">{{$user->name}}</td>
+                                    <td class="hidden-480">{{$user->full_name}}</td>
                                     <td class="hidden-480">{{$user->created_at}}</td>
-
                                     <td class="hidden-480 center">
                                         <?php 
                                             $enable = trans("common.status_enable");
@@ -99,16 +100,15 @@
                                         ?>
                                         <span class="label label-sm label-{{$class}}">{{@$arr_status[$user->status]}}</span>
                                     </td>
+                                        <td class="center">
+                                            <div class="hidden-sm hidden-xs action-buttons">
+                                                <a class="green" href="<?php echo route('admin.users.edit', $user->id); ?>">
+                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                </a>
 
-                                    <td class="center">
-                                        <div class="hidden-sm hidden-xs action-buttons">
-                                            <a class="green" href="<?php echo route('admin.users.edit', $user->id); ?>">
-                                                <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                            </a>
-
-                                            <a class="red" href="#">
-                                                <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                            </a>
+                                                <a class="red" onclick="return confirm('<?php echo trans('common.delete_confirm'); ?>');" href="<?php echo route('admin.users.del', $user->id); ?>">
+                                                    <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                </a>
                                         </div>
 
                                         <div class="hidden-md hidden-lg">
@@ -152,37 +152,13 @@
         </div> 
 
         @if(count($users) > 0)   
-        <div class="modal-footer no-margin-top">
-            <button class="btn btn-sm btn-danger pull-left">
-                <i class="ace-icon fa fa-trash-o bigger-110"></i>
-                 {{trans('common.lbl_delete')}}
-            </button>
-            <ul class="pagination pull-right no-margin">
-                <li class="prev disabled">
-                    <a href="#">
-                        <i class="ace-icon fa fa-angle-double-left"></i>
-                    </a>
-                </li>
-
-                <li class="active">
-                    <a href="#">1</a>
-                </li>
-
-                <li>
-                    <a href="#">2</a>
-                </li>
-
-                <li>
-                    <a href="#">3</a>
-                </li>
-
-                <li class="next">
-                    <a href="#">
-                        <i class="ace-icon fa fa-angle-double-right"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        
+            <div class="box-footer clearfix">
+                <ul class="pagination pagination-lg no-margin pull-right">
+                    {!! $users->render() !!}
+                </ul>
+            </div>
+               
         @endif
 </div>
 @endsection

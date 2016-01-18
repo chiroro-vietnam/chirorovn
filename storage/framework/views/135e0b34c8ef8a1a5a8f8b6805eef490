@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja">
+	<link href="<?php echo e(asset("frontend/common/css/import.css")); ?>" rel="stylesheet" type="text/css" media="all" />
+	<script src="<?php echo e(asset('/frontend/common/js/jquery.min.js')); ?>"></script>
+	<script src="<?php echo e(asset('/frontend/common/js/jquery.bxslider.min.js')); ?>"></script>
+	<script src="<?php echo e(asset('/frontend/common/js/jquery.rollover.js')); ?>"></script>
+	<script src="<?php echo e(asset('/frontend/common/js/jquery.flatheights.js')); ?>"></script>
+	<script src="<?php echo e(asset('/frontend/common/js/top.js')); ?>"></script>
+	<script src="<?php echo e(asset('/frontend/common/js/analytics.js')); ?>"></script>
+<?php echo $__env->make('frontend/element/header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<body>
+<form>	
+	<section id="contact">
+	<?php $locale = LaravelLocalization::getCurrentLocale();?>
+	<?php $inquiry = 'frontend/element/locale/'.$locale.'/inquiry';?>
+	<?php echo $__env->make($inquiry, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	</section>
+</form>
+<?php echo $__env->make('frontend/element/footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+</html>

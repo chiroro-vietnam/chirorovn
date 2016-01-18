@@ -2,7 +2,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
 		<title>Chiroro-Net Viet</title>
-
+		<link rel="icon" href="<?php echo e(asset('/favicon/favicon.png')); ?>" type="image/gif" >
 		<meta name="description" content="Mailbox with some customizations as described in docs" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -17,7 +17,7 @@
 
 		<!-- page specific plugin styles -->
 		<!-- text fonts -->
-		<?php echo HTML::style("backend/fonts.googleapis.com.css"); ?>
+		<?php echo HTML::style("backend/fonts/fonts.googleapis.com.css"); ?>
 
 		<!-- ace styles -->
 		<?php echo HTML::style("backend/css/ace.min.css"); ?>

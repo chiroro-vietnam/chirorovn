@@ -8,17 +8,18 @@ use URL;
 use Form;
 use View;
 
+
 class DashboardController extends BackendController
 { 
     public function __construct()
     {
         parent::__construct();
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
     
-    public function index()
+    public function dashboard()
     {
-        return view('admin.dashboard');
+    	return view('admin.dashboard');
     }
 
 }

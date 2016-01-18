@@ -23,105 +23,118 @@
         </div><!-- /.page-header -->
             
         <div class="row">                        
-            <div class="col-xs-12">
-                <!-- PAGE CONTENT BEGINS -->
-                <?php echo Form::open( ['method' => 'post', 'route' => 'admin.users.add', 'class' => 'form-horizontal', 'enctype'=>'multipart/form-data'] ); ?>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
 
-                    <div class="form-group <?php echo $errors->has('username') ? 'has-error' : ''; ?>">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo e(trans('common.lbl_username')); ?><span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span></label>
-                        <div class="col-sm-9">
-                            <input type="text" id="username" name="username" placeholder="<?php echo e(trans('common.lbl_username')); ?>" class="col-xs-10 col-sm-5" autofocus/>                                            
-                        </div>
-                        <?php if(!$errors->first('username')): ?>
-                           <span class="help-block"><?php echo $errors->first('username'); ?></span>
-                        <?php endif; ?>
+                    <div class="x_content">
+                        <br />
+                        <?php echo Form::open( ['method' => 'post', 'route' => 'admin.users.add', 'class' => 'form-horizontal', 'enctype'=>'multipart/form-data'] ); ?>
+
+
+                            <div class="form-group">
+                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username"><?php echo e(trans('common.lbl_username')); ?> <span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="username" id="username" class="form-control parsley-error col-md-7 col-xs-12" placeholder="<?php echo e(trans('common.lbl_username')); ?>" autofocus value="<?php echo e(Input::old('username')); ?>">
+                                    
+                                    <ul class="parsley-errors-list filled" id="parsley-id-3888">
+                                        <li class="parsley-required"><?php if($errors->first('username')): ?> ※ <?php echo $errors->first('username'); ?> <?php endif; ?></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                           <div class="form-group">
+                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email"><?php echo e(trans('common.lbl_email')); ?> <span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="email" id="email" class="form-control parsley-error col-md-7 col-xs-12" placeholder="<?php echo e(trans('common.lbl_email')); ?>" autofocus value="<?php echo e(Input::old('email')); ?>">
+                                    
+                                    <ul class="parsley-errors-list filled" id="parsley-id-3888">
+                                        <li class="parsley-required"><?php if($errors->first('email')): ?> ※ <?php echo $errors->first('email'); ?> <?php endif; ?></li>
+                                    </ul>
+                                </div>
+                            </div>                       
+
+                           <div class="form-group">
+                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password"><?php echo e(trans('common.lbl_password')); ?> <span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="password" name="password" id="password" class="form-control parsley-error col-md-7 col-xs-12" placeholder="<?php echo e(trans('common.lbl_password')); ?>" autofocus value="<?php echo e(Input::old('password')); ?>">
+                                    
+                                    <ul class="parsley-errors-list filled" id="parsley-id-3888">
+                                        <li class="parsley-required"><?php if($errors->first('password')): ?> ※ <?php echo $errors->first('password'); ?> <?php endif; ?></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="confirm_password"><?php echo e(trans('common.lbl_confirm_password')); ?>
+
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="password" name="confirm_password" id="confirm_password" class="form-control parsley-error col-md-7 col-xs-12" placeholder="<?php echo e(trans('common.lbl_confirm_password')); ?>" autofocus value="<?php echo e(Input::old('confirm_password')); ?>">
+                                    
+                                    <ul class="parsley-errors-list filled" id="parsley-id-3888">
+                                        <li class="parsley-required"><?php if($errors->first('confirm_password')): ?> ※ <?php echo $errors->first('confirm_password'); ?> <?php endif; ?></li>
+                                    </ul>
+                                </div>
+                            </div> 
+
+                            <div class="form-group">
+                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"><?php echo e(trans('common.lbl_name')); ?> <span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="full_name" id="full_name" class="form-control parsley-error col-md-7 col-xs-12" placeholder="<?php echo e(trans('common.lbl_name')); ?>" autofocus value="<?php echo e(Input::old('full_name')); ?>">
+                                    
+                                    <ul class="parsley-errors-list filled" id="parsley-id-3888">
+                                        <li class="parsley-required"><?php if($errors->first('full_name')): ?> ※ <?php echo $errors->first('full_name'); ?> <?php endif; ?></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <?php if(LaravelLocalization::getCurrentLocaleName() == 'ja'): ?>
+                            <div class="form-group">
+                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="furigana"><?php echo e(trans('common.lbl_furigana')); ?> <span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="furigana" id="furigana" class="form-control parsley-error col-md-7 col-xs-12" placeholder="<?php echo e(trans('common.lbl_furigana')); ?>" autofocus value="<?php echo e(Input::old('furigana')); ?>">
+                                    
+                                    <ul class="parsley-errors-list filled" id="parsley-id-3888">
+                                        <li class="parsley-required"><?php if($errors->first('furigana')): ?> ※ <?php echo $errors->first('furigana'); ?> <?php endif; ?></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+
+                            <div class="form-group">
+                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="status"><?php echo e(trans('common.lbl_status')); ?> <span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span>
+                                </label>
+                                <div class="col-md-4 col-sm-4 col-xs-4">    
+                                        <select  class="col-xs-3" id="status" name="status">
+                                            <option value="1">Enable</option>
+                                            <option value="0">Disable</option>
+                                        </select>
+                              
+                                    <ul class="parsley-errors-list filled" id="parsley-id-3888">
+                                        <li class="parsley-required"><?php if($errors->first('publish')): ?> ※ <?php echo $errors->first('publish'); ?> <?php endif; ?></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-3 col-xs-9 col-md-offset-3">
+                                    <button type="submit" class="width-45 pull-right btn btn-sm btn-info">
+                                        <span class="bigger-110"><?php echo e(trans('common.btn_user_save')); ?></span>
+                                        <!-- <i class="ace-icon fa fa-arrow-right icon-on-right"></i> -->
+                                    </button>
+                                </div>
+                            </div>
+
+                        <?php echo Form::close(); ?>
+
                     </div>
-
-                    <div class="form-group <?php echo $errors->has('email') ? 'has-error' : ''; ?>">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo e(trans('common.lbl_email')); ?><span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span></label>
-                        <div class="col-sm-9">
-                            <input type="text" id="email" name="email" placeholder="<?php echo e(trans('common.lbl_email')); ?>" class="col-xs-10 col-sm-5" autofocus/>                                            
-                        </div>
-                        <?php if(!$errors->first('email')): ?>
-                           <span class="help-block"><?php echo $errors->first('email'); ?></span>
-                        <?php endif; ?>
-                    </div>                    
-                    
-                    <div class="form-group <?php echo $errors->has('password') ? 'has-error' : ''; ?>">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo e(trans('common.lbl_password')); ?><span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span></label>
-                        <div class="col-sm-9">
-                            <input type="password" id="password" name="password" placeholder="<?php echo e(trans('common.lbl_password')); ?>" class="col-xs-10 col-sm-5" autofocus/>                                            
-                        </div>
-                        <?php if(!$errors->first('password')): ?>
-                           <span class="help-block"><?php echo $errors->first('password'); ?></span>
-                        <?php endif; ?>
-                    </div>
-                    <div class="form-group <?php echo $errors->has('confirm_password') ? 'has-error' : ''; ?>">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo e(trans('common.lbl_confirm_password')); ?><span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span></label>
-                        <div class="col-sm-9">
-                            <input type="password" id="confirm_password" name="confirm_password" placeholder="<?php echo e(trans('common.lbl_confirm_password')); ?>" class="col-xs-10 col-sm-5" autofocus/>                                            
-                        </div>
-                        <?php if(!$errors->first('confirm_password')): ?>
-                           <span class="help-block"><?php echo $errors->first('confirm_password'); ?></span>
-                        <?php endif; ?>
-                    </div>
-
-                    <div class="form-group <?php echo $errors->has('name') ? 'has-error' : ''; ?>">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo e(trans('common.lbl_name')); ?><span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span></label>
-                        <div class="col-sm-9">
-                            <input type="text" id="name" name="name" placeholder="<?php echo e(trans('common.lbl_name')); ?>" class="col-xs-10 col-sm-5" autofocus/>                                            
-                        </div>
-                        <?php if(!$errors->first('name')): ?>
-                           <span class="help-block"><?php echo $errors->first('name'); ?></span>
-                        <?php endif; ?>
-                    </div>                                   
-
-                    <?php if(LaravelLocalization::getCurrentLocaleName() == 'Japanese'): ?>
-
-                     <div class="form-group <?php echo $errors->has('furigana') ? 'has-error' : ''; ?>">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo e(trans('common.lbl_furigana')); ?><span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span></label>
-                        <div class="col-sm-9">
-                            <input type="text" id="furigana" name="furigana" placeholder="<?php echo e(trans('common.lbl_furigana')); ?>" class="col-xs-10 col-sm-5" autofocus/>                                            
-                        </div>
-                        <?php if(!$errors->first('furigana')): ?>
-                           <span class="help-block"><?php echo $errors->first('furigana'); ?></span>
-                        <?php endif; ?>
-                    </div>                                    
-                    <?php endif; ?>
-
-                    <div class="space-4"></div>
-                    <div class="form-group">
-                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="food"> <?php echo e(trans('common.lbl_status')); ?></label>
-
-                        <div class="col-xs-13 col-sm-9">
-                            <select  class="col-xs-3" id="status" name="status">
-                                <option value="1">Enable</option>
-                                <option value="0">Disable</option>
-                            </select>
-                        </div>
-                    </div> 
-
-                    <div class="clearfix form-actions">
-                        <div class="col-md-offset-3">
-                            <button class="btn btn-info" type="button">
-                                <i class="ace-icon fa fa-check bigger-110"></i>
-                                Submit
-                            </button>
-                            &nbsp; &nbsp;
-                            <button class="btn" type="reset">
-                                <i class="ace-icon fa fa-undo bigger-110"></i>
-                                Reset
-                            </button>
-                        </div>
-                    </div>
-
-            <?php echo Form::close(); ?>
-
-
-            </div><!-- /.col -->
+                </div>
+            </div>
         </div><!-- /.row -->
-
-
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

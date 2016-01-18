@@ -3,7 +3,6 @@
 <!-- Header -->
 @include('admin/element/header')
 <!--/Header-->
-
     <body class="no-skin">
         <div id="navbar" class="navbar navbar-default">
             <script type="text/javascript">
@@ -48,44 +47,32 @@
                         <li class="purple">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <i class="ace-icon fa fa-bell icon-animated-bell"></i>
-                                <span class="badge badge-important">8</span>
+                                <span class="badge badge-primary"><?php echo @NOTIFY;?></span>
                             </a>
 
                             <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
                                 <li class="dropdown-header">
                                     <i class="ace-icon fa fa-exclamation-triangle"></i>
-                                    8 Notifications
+                                    <?php echo @NOTIFY;?> Notifications
                                 </li>
 
                                 <li class="dropdown-content">
                                     <ul class="dropdown-menu dropdown-navbar navbar-pink">
                                         <li>
-                                            <a href="#">
+                                            <a href="<?php echo route('admin.inquiry.index');?>">
                                                 <div class="clearfix">
                                                     <span class="pull-left">
                                                         <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-                                                        Recruit
+                                                        Contacts
                                                     </span>
-                                                    <span class="pull-right badge badge-info">+12</span>
+                                                    <span class="pull-right badge badge-info"><?php echo @NOTIFY;?></span>
                                                 </div>
                                             </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="btn btn-xs btn-primary fa fa-user"></i>
-                                                Contact
-                                            </a>
-                                        </li>                                        
+                                        </li>                                                                            
                                     </ul>
                                 </li>
 
-                                <li class="dropdown-footer">
-                                    <a href="#">
-                                        See all notifications
-                                        <i class="ace-icon fa fa-arrow-right"></i>
-                                    </a>
-                                </li>
+                                <li class="dropdown-footer"></li>
                             </ul>
                         </li>
                         <li class="light-blue">
@@ -98,18 +85,19 @@
                             </a>
                             <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                                 <li>
-                                    <a href="#">
-                                        <i class="ace-icon fa fa-key"></i>
-                                        Change password
+                                    <a href="javascript:void(0);">
+                                       <!--  <i class="ace-icon fa fa-key"></i> -->
+                                       &nbsp;
+                                        <!-- Change password -->
                                     </a>
                                 </li>
 
                                 <li class="divider"></li>
 
                                 <li>
-                                    <a href="#">
+                                    <a href="<?php echo route('admin.auth.logout');?>">
                                         <i class="ace-icon fa fa-power-off"></i>
-                                        Logout
+                                        {{trans('common.btn_logout')}}
                                     </a>
                                 </li>
                             </ul>
@@ -172,7 +160,7 @@
 </script>
 <![endif]-->
         <script type="text/javascript">
-            if('ontouchstart' in document.documentElement) document.write("<script src="{{asset('/backend/js/jquery.mobile.custom.min.js')}}">"+"<"+"/script>");
+            if('ontouchstart' in document.documentElement) document.write("<script src='{{asset("/backend/js/jquery.mobile.custom.min.js")}}'>"+"<"+"/script>");
         </script>
 
         <script src="{{ asset('/backend/js/bootstrap.min.js') }}"></script>

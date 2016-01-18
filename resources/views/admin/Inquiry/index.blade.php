@@ -22,37 +22,48 @@
         <div class="page-header">
             <h1>{{trans('common.lbl_inquiry_header')}}</h1>
         </div><!-- /.page-header -->
-                <div class="clearfix"></div>
-                    <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="x_content">
+            <div class="clearfix"></div>
+            <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
 
+                <div class="x_content">
+                <div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                            <li style="margin-left: 7px;">{{ $message }}</li>
+                        </div>
+
+                        @elseif($message = Session::get('error'))
+                           <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                            <li style="margin-left: 7px;">{{ $message }}</li>
+                        </div>
+                    @endif
+                </div>
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                     <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th class="center" width="60px">
-                                    <label class="pos-rel">
-                                        <input type="checkbox" class="ace" />
-                                        <span class="lbl"></span>
-                                    </label>
-                                </th>
-                                 <th class="center">{{trans('common.lbl_inquiry_title')}}</th>
-                                <th class="center">{{trans('common.lbl_inquiry_company')}}</th>                               
-                                <th class="center">{{trans('common.lbl_inquiry_name')}}</th>
-                                @if(LaravelLocalization::getCurrentLocale() == 'ja')
-                                <th class="hidden-480 center">                                   
+                                <th class="center" width="3%">#</th>
+                                <th class="center" width="8%">{{trans('common.lbl_inquiry_title')}}</th>
+                                <th class="center" width="8%">{{trans('common.lbl_inquiry_company')}}</th>                               
+                                <th class="center" width="8%">{{trans('common.lbl_inquiry_name')}}</th>
+                               <!--  @if(LaravelLocalization::getCurrentLocale() == 'ja') -->
+                                <th class="center" width="8%">                                   
                                     {{trans('common.lbl_inquiry_furigana')}}
                                 </th>
-                                @endif
-                                <th class="hidden-480 center">{{trans('common.lbl_inquiry_address')}}</th>                               
-
-                                <th class="hidden-480 center" width="100px">{{trans('common.lbl_inquiry_phone')}}</th>
-                                <th class="center">{{trans('common.lbl_inquiry_email')}}</th>
-                                <th class="hidden-480 center">{{trans('common.lbl_inquiry_language')}}</th>
+                               <!--  @endif -->
+                                <th class="hidden-480 center" width="8%">{{trans('common.lbl_inquiry_address')}}</th>
+                                <th class="hidden-480 center" width="5%">{{trans('common.lbl_inquiry_phone')}}</th>
+                                <th class="center" width="6%">{{trans('common.lbl_inquiry_email')}}</th>
+                                <th class="hidden-480 center" width="6%">{{trans('common.lbl_inquiry_language')}}</th>
                                 <th class="hidden-480 center">{{trans('common.lbl_inquiry_comment')}}</th>
-                                <th class="center" width="80px">{{trans('common.lbl_action')}}</th>
-
+                                <th class="center" width="7%">{{trans('common.lbl_action')}}</th>
                             </tr>
                         </thead>
 
@@ -71,38 +82,26 @@
                                     }
                                 ?>
                                 <tr>
-                                    <td class="center">
-                                        <label class="pos-rel">
-                                            <input type="checkbox" class="ace" name="chkUser" id="ace"/>
-                                            <span class="lbl"></span>
-                                        </label>
-                                        <a class="{{$class}}" href="javascript:void(0);">
-                                            <i class="ace-icon fa fa-flag bigger-120" title="{{$title}}"></i>
-                                        </a>
-                                    </td>
-                                    
+                                    <td class="center">{{$inquiry->id}}</td>                                    
                                     <td><a href="<?php echo url(LaravelLocalization::getCurrentLocale().'/admin/inquiry/detail/'.$inquiry->id); ?>">{{$inquiry->title}}</a></td>
                                     <td>{{$inquiry->company}}</td>
                                     <td>{{$inquiry->name}}</td>
-                                    @if(LaravelLocalization::getCurrentLocale() == 'ja')
-                                        <td class="hidden-480">{{$inquiry->furigana}}</td>
-                                    @endif
+                                   <!--  @if(LaravelLocalization::getCurrentLocale() == 'ja') -->
+                                        <td class="center">{{$inquiry->furigana}}</td>
+                                   <!--  @endif -->
                                     <td class="hidden-480 center">
                                         {{$inquiry->address}}
                                     </td>
-
                                     <td class="hidden-480">{{$inquiry->phone}}</td>
                                     <td>{{$inquiry->email}}</td>
-                                    <td class="hidden-480">{{@$lang[$inquiry->language]}}</td>
-                                    <td class="hidden-480">{{$inquiry->comment}}</td>
-                                     
+                                    <td class="hidden-480 center">{{@$lang[$inquiry->language]}}</td>
+                                    <td class="hidden-480">{{$inquiry->comment}}</td>                                     
                                     <td class="center">
                                         <div class="hidden-sm hidden-xs action-buttons">
                                             <a class="{{$class}}" href="javascript:void(0);">
                                                 <i class="ace-icon fa fa-flag bigger-120" title="{{$title}}"></i>
                                             </a>
-
-                                            <a class="red" href="123">
+                                            <a class="red" onclick="return confirm('<?php echo trans('common.delete_confirm'); ?>');" href="<?php echo route('admin.inquiry.del', $inquiry->id); ?>">
                                                 <i class="ace-icon fa fa-trash-o bigger-130" title="Delete"></i>
                                             </a>
                                         </div>
@@ -136,17 +135,23 @@
                             @endforeach
                             @else
                                 <tr>
-                                    <td colspan="11" class="center">No Data</td>
-                                    
+                                    <td colspan="11" class="center">No Data</td>                                    
                                 </tr>
                             @endif
 
                         </tbody>
-                    </table>
-                                        
-                    </form>
-               
+                    </table>                                        
+                </form>              
+            
             </div>
+                @if(count($data) > 0)
+                    <div class="box-footer clearfix">
+                        <ul class="pagination pagination-lg no-margin pull-right">
+                            {!! $data->render() !!}
+                        </ul>
+                    </div>
+                @endif
+
         </div>
     </div>
 

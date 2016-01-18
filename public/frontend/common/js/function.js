@@ -56,7 +56,7 @@ $(document).ready(function(){
 		    });
       });
     });
-$('#subsendcontent').css('display','none');
+/*$('#subsendcontent').css('display','none');
 $('#subcomback').css('display','none');
 $('#subconfirm').click(function(){
 	$('.form-control').css('display','none');
@@ -76,4 +76,4 @@ $('#subsendcontent').click(function(){
 	$('.formrow').css('display','none');
 	$('#subcomback').css('display','block');
 	
-});
+});/

@@ -1,0 +1,20 @@
+<?php echo e($name); ?> さま<br><br>
+
+会社名: <?php echo e($company); ?><br>
+
+役職: <?php echo e($title); ?><br>
+
+お名前: <?php echo e($name); ?><br>
+
+<?php if(isset($furigana)) echo 'ふりがな: '. $furigana;?><br>
+
+ご住所: <?php echo e($address); ?><br>
+
+電話番号: <?php echo e($phone); ?><br>
+
+メールアドレス: <?php echo e($email); ?><br>
+
+お問い合わせ内容: <?php echo nl2br($comment);?><br><br><br>
+
+
+<?php echo nl2br($signature);?><br>

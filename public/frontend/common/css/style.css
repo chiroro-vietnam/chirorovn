@@ -503,7 +503,7 @@ form{
 .txtFormError {
     padding-top: 2px;
     color: #F00;
-    font-size: 10px;
+    font-size: 12px;
 }
 .formleft{
 	background-color: #F2F7FA;
@@ -552,11 +552,9 @@ form{
 }
 .lbFormConfirm{
 	color:#8e8e8e;
-	display:none;
 	margin-top:24px;
 }
 .successconfirm{
-	display:none;
 	border: 1px solid #7FB5CC;
 	padding:30px;
 	border-radius:5px;

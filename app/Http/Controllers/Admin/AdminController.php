@@ -32,6 +32,13 @@ class AdminController extends BackendController
         $this->auth = $auth;
         $this->registrar = $registrar;
         $this->middleware('auth', ['except' => array('getLogin', 'postLogin')]);
+
+        $contact = DB::table('contact')
+                            ->where('is_deleted', ACTIVE)
+                            ->where('reader', 1)
+                            ->select('id', 'reader')
+                            ->get();
+        $notify = count($contact);
     }
 
     /************************************************************************
@@ -46,14 +53,18 @@ class AdminController extends BackendController
     * post admin login
     /************************************************************************/
     public function postLogin(){
-        $adminInput = array(
-                'email'		=> trim(Input::get('email')),
-                'password' 	=> trim(Input::get('password')),
-        );
+        // $adminInput = array(
+        //         'email'		=> trim(Input::get('email')),
+        //         'password' 	=> trim(Input::get('password')),
+        // );
         
         $validator = Validator::make(Input::all(), User::$rules, User::$message);
         if($validator->passes()){				
-            if(Auth::attempt($adminInput, false)){					
+            if(Auth::attempt(array(
+                'email'     => Input::get('email'),
+                'password'  => Input::get('password'),
+                'status'    => 1,
+                ), false)){					
                 return redirect()->route('admin.dashboard.index');
             }else
                 Session::flash('success', 'ユーザIDまたは間違ったパスワード');
