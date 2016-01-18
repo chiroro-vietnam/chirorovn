@@ -1,5 +1,4 @@
 @extends('backend')
-
 @section('content')
 <!--breadcrumb-->
     <div class="breadcrumbs" id="breadcrumbs">
