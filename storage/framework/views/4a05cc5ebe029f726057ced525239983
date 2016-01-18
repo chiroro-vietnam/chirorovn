@@ -75,7 +75,7 @@
                                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="publish"><?php echo e(trans('common.lbl_recruit_publish')); ?> <span class="icnMust"><?php echo e(trans('common.icnMust')); ?></span>
                                 </label>
                                 <div class="col-md-4 col-sm-4 col-xs-4">    
-                                        <select  class="col-xs-3" id="publish" name="publish">                                            
+                                        <select  class="col-xs-3" id="publish" name="publish" style="width: 90px;">                                            
                                             <option value="0">Disable</option>
                                             <option value="1">Enable</option>
                                         </select>

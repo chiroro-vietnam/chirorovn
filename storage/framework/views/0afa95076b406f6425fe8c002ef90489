@@ -103,7 +103,7 @@
                                                 <i class="ace-icon fa fa-pencil bigger-130"></i>
                                             </a>
 
-                                            <a class="red" onclick="return confirm('Are you sure delete this item?');" href="<?php echo route('admin.recruit.del', $recruit->id); ?>">
+                                            <a class="red" onclick="return confirm('<?php echo trans('common.delete_confirm'); ?>');" href="<?php echo route('admin.recruit.del', $recruit->id); ?>">
                                                 <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                             </a>
                                         </div>
