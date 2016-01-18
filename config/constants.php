@@ -2,7 +2,7 @@
 
 define('ACTIVE', 0);//not delete
 define('INACTIVE', 1);//deleted
-define('LIMIT_PAGE', 2);//pagination
+define('LIMIT_PAGE', 10);//pagination
 define('PUBLISH', 1);
 define('UNPUBLISH', 0);
 define('WIDTH_TITLE_LOGO', 30);

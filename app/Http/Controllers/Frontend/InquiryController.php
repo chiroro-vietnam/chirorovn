@@ -81,7 +81,9 @@ class InquiryController extends FrontendController
         $input = $input_data ;
         $input['created_at'] = date('Y-m-d H:i:s');
         $input['updated_at'] = date('Y-m-d H:i:s');
-        DB::table('contact')->insert($input);
+        if(!empty($input)){
+            DB::table('contact')->insert($input);
+        }        
 
         //send email
         $signature = DB::table('signature')
@@ -93,7 +95,7 @@ class InquiryController extends FrontendController
         $data = array();
         if (!empty($input_data)) {
             $data = array_merge($input_data, $sigArr);
-        }
+        }10
 
         Mail::send('frontend.inquiry.email', $data, function($message) use ($data)  {
         $email = DB::table('setting')->where('is_deleted', ACTIVE)->select('setting.email')->find(1);
