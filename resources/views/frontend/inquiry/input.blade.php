@@ -104,7 +104,7 @@
 					<div class="form-group col-md-3 formleft">
 						<span>{{trans('common.lbl_inquiry_comment')}}</span><span class="icnMust">{{trans('common.icnMust')}}</span>
 					</div>
-					<div class="form-group col-md-9">
+					<div class="form-group col-md-9 formright">
 						<textarea name="comment" class="form-control" rows="8" placeholder="{{trans('common.lbl_inquiry_comment')}}" id="comment" value="{{Input::old('comment')}}">{{Input::old('comment')}}</textarea>
 						@if($errors->first('comment'))
 						<p class="txtFormError">※ {{$errors->first('comment')}}</p>
