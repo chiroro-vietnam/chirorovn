@@ -105,8 +105,8 @@ Route::get('admin/logout', function () {
         return redirect()->to('en/auth/logout');
     });
 
-// //prefix locale
-// Route::get(LaravelLocalization::getCurrentLocale().'/auth/login', function () {
-//         return redirect()->to(LaravelLocalization::getCurrentLocale().'/auth/login');
-//     });
+//prefix locale
+Route::get(LaravelLocalization::getCurrentLocale().'/admin', function () {
+        return redirect()->to(LaravelLocalization::getCurrentLocale().'/auth/login');
+    });
 
